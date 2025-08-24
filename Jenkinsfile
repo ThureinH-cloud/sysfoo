@@ -4,19 +4,19 @@ pipeline {
     stages {
         stage("one") {
             steps {
-                echo 'step 1'
+                echo 'compiling the app....'
                 sh 'mvn compile'
             }
         }
         stage("two") {
             steps {
-                echo 'step 2'
+                echo 'testing the app....'
                 sh 'mvn clean test'
             }
         }
         stage("three") {
             steps {
-                echo 'step 3'
+                echo 'packaging the app....'
                 sh 'mvn package -DskipTests'
             }
         }
