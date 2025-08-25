@@ -20,6 +20,7 @@ pipeline {
         echo 'packaging the app....'
         sh 'mvn package -DskipTests'
         sh 'mvn -v'
+        archiveArtifacts '**/target/*.jar'
       }
     }
 
